@@ -1,0 +1,189 @@
+User
+Create a simple web page to demonstrate use of built in
+DivideByZeroException and IndexOutOfRangeException
+exceptions using textbox and label control. 
+ChatGPT
+Certainly! Below is an example of a simple ASP.NET Web Forms page that demonstrates the use of DivideByZeroException and IndexOutOfRangeException exceptions using TextBox and Label controls:
+
+Default.aspx:
+
+aspx
+Copy code
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="YourNamespace.Default" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Exception Handling Demo</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h2>Exception Handling Demo</h2>
+
+            <asp:Label ID="lblResult" runat="server" ForeColor="Red"></asp:Label>
+            <br />
+
+            <label>Enter Dividend:</label>
+            <asp:TextBox ID="txtDividend" runat="server"></asp:TextBox>
+            <br />
+
+            <label>Enter Divisor:</label>
+            <asp:TextBox ID="txtDivisor" runat="server"></asp:TextBox>
+            <br />
+
+            <asp:Button ID="btnDivide" runat="server" Text="Divide" OnClick="btnDivide_Click" />
+            <br />
+
+            <label>Enter Index:</label>
+            <asp:TextBox ID="txtIndex" runat="server"></asp:TextBox>
+            <br />
+
+            <asp:Button ID="btnAccessArray" runat="server" Text="Access Array" OnClick="btnAccessArray_Click" />
+        </div>
+    </form>
+</body>
+</html>
+Default.aspx.cs:
+
+csharp
+Copy code
+using System;
+
+namespace YourNamespace
+{
+    public partial class Default : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+        }
+
+        protected void btnDivide_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int dividend = int.Parse(txtDividend.Text);
+                int divisor = int.Parse(txtDivisor.Text);
+
+                int result = DivideNumbers(dividend, divisor);
+
+                lblResult.Text = $"Result of division: {result}";
+            }
+            catch (DivideByZeroException ex)
+            {
+                lblResult.Text = $"Error: {ex.Message}";
+            }
+            catch (FormatException)
+            {
+                lblResult.Text = "Error: Invalid input. Please enter valid numbers.";
+            }
+        }
+
+        protected void btnAccessArray_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int index = int.Parse(txtIndex.Text);
+                int[] array = { 10, 20, 30, 40, 50 };
+
+                int value = AccessArrayElement(array, index);
+
+                lblResult.Text = $"Value at index {index}: {value}";
+            }
+            catch (IndexOutOfRangeException)
+            {
+                lblResult.Text = "Error: Index is out of range.";
+            }
+            catch (FormatException)
+            {
+                lblResult.Text = "Error: Invalid input. Please enter a valid index.";
+            }
+        }
+
+        private int DivideNumbers(int dividend, int divisor)
+        {
+            if (divisor == 0)
+            {
+                throw new DivideByZeroException("Cannot divide by zero.");
+            }
+
+            return dividend / divisor;
+        }
+
+        private int AccessArrayElement(int[] array, int index)
+        {
+            return array[index];
+        }
+    }
+}
+This example uses two buttons, one for dividing numbers and another for accessing an array element. Both operations may throw exceptions, and the program catches and handles these exceptions to provide meaningful messages to the user.
+
+
+
+
+
+
+Create a simple web page to show data in Tree view control and
+datalist using web. Sitemap file containing navigation information
+ChatGPT
+Certainly! Below is an example of a simple ASP.NET Web Forms page that uses a TreeView control and a DataList control to display data based on a sitemap file.
+
+Default.aspx:
+
+aspx
+Copy code
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="YourNamespace.Default" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>TreeView and DataList Example</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h2>TreeView and DataList Example</h2>
+
+            <asp:TreeView ID="TreeView1" runat="server" ShowLines="true" DataSourceID="SiteMapDataSource" DataTextField="Title" DataNavigateUrlField="Url">
+            </asp:TreeView>
+
+            <br />
+            <br />
+
+            <asp:DataList ID="DataList1" runat="server" DataSourceID="SiteMapDataSource">
+                <ItemTemplate>
+                    <h3><%# Eval("Title") %></h3>
+                    <p><%# Eval("Description") %></p>
+                    <hr />
+                </ItemTemplate>
+            </asp:DataList>
+
+            <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" ShowStartingNode="false" />
+        </div>
+    </form>
+</body>
+</html>
+Default.aspx.cs:
+
+csharp
+Copy code
+using System;
+
+namespace YourNamespace
+{
+    public partial class Default : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                // Bind the TreeView and DataList to the SiteMapDataSource
+                TreeView1.DataBind();
+                DataList1.DataBind();
+            }
+        }
+    }
+}
+In this example, the SiteMapDataSource control is used to read navigation information from a site map file. The TreeView control is bound to this data source to display a hierarchical view of the site map. Additionally, the DataList control is also bound to the same data source to display detailed information about each page in a list format.
