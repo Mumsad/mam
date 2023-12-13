@@ -1,0 +1,2359 @@
+Contents
+Contents	2
+1.	Create a XML document for student database and apply the style sheet effects and display onwebpage	5
+2.	Create a simple web page containing the student details (Roll No, Name, Class, Phone, Email).WriteaprogramtostorethedatainthedatabaseandretrieveitusingDatareaderintabularformat	7
+3.	Create a simple web page with various sever controls to demonstrate setting and use of theirproperties.(Example:AutoPostBack)	11
+1.	On click of a button control display the selected items from the listbox in a textbox. Also in thesame webpage display the name of the selected item from the DropDownList1 in a label. AlsochangethefontsizeofthesamelabelaccordingtothefontsizeselectedfromtheDropdownlist2.
+....................................................................................................................................................    112.DisplayImagecontrolforphoto............................................................................................... 13
+3.	Check Boxes provides special formatting (viz. underline, bold, italic) and Radio Buttons providescolorforlabel.4.UseofAutoPostBackproperty	14
+4.	Create a simple web page to count the number of times the current webpage is submitted to theserveronclickeventofaButton	17
+5.	Createsimpleapplicationtoperformfollowingoperations	19
+i.	FindingfactorialValue	19
+ii.	MoneyConversion	19
+iii.	Cubeofgivennumber	19
+iv.	GenerateFibonacciseries	19
+6.	DemonstratetheuseofCalendarcontroltoperformfollowingoperations.	23
+a)	Displaymessagesinacalendarcontrol	23
+b)	Displayvacationinacalendarcontrol	23
+c)	Selecteddayinacalendarcontrolusingstyle	23
+d)	Differencebetweentwocalendardates	23
+7.	Create Web Form to demonstrate use of User Control. Create footer named user control havingcopyrightreserved(ex. “©companyname”)anduseit inawebpage.	26
+8.	Create Web Form to demonstrate use of Ad rotator Control with five advertisements. Alsodemonstratehowkeywordfilterworks.	28
+9.	Create XML file employees with nodes (eid, ename, edept, salary). Bind the eid and ename to adropdownlistandtheenameshouldbeintheascendingorder.	30
+10.	Create simple web page that takes a number as input and display it four times in a row(separatedbyblankspaces),andthenfourtimesinthenextrow,withnoseparation.Like	32
+Enteradigit:22	32
+ExpectedOutput	32
+22222222..................................................................................................................................32
+ 
+22222222....................................................................................................................................32
+22222222..................................................................................................................................32
+22222222....................................................................................................................................32
+11.	CreateasimplewebpagetodisplaytheDateproperties(year,month, day,hour,minute,second, millisecond etc.) as well as to display the number of days of the year between two specifiedyears.	34
+12.	Create a web page containing the student details (RollNo, Name, Class, Phone, Email) and showresultusingDatabindinganddropdownlistcontrol	35
+14.	Createasimplewebpagetodemonstrateall stringoperations.	37
+15.	Design an asp.net webpage with 2 groups of Radio Buttons, DropDownList, label and TextBox toperform the following operations:-On click of Radio Buttons each at the same time from twodifferent groups, change the font- size and font-face of the label’s Text. Also on the same webpageshow that, on selecting a country name from the dropdown list, its respective country code getsdisplayedinatextbox	40
+14.	Create a delegate del1. Create display1() and display2() static methods. Create a simpleapplicationtocallthesetwomethodsbythethroughthedelegate.	43
+15.	Createasimplewebpagetoshowhowtowriteandreadacookiefromaclient'scomputer.	45
+16.	CreateawebapplicationtodemonstrateuseofHtmlEditorExtenderAjaxcontrol	47
+17.	CreateawebapplicationtodemonstrateuseofMasterPagewithapplyingStylesandThemesforpagebeautification	47
+18.	Create a web application to demonstrate Form Security and Windows Security with properAuthenticationandAuthorizationproperties.	54
+19.	Create a web application to demonstrate Grid View paging and Creating own table format usingGrid View	58
+20.	Createawebapplicationtobinddatainamultilinetextboxbyqueryinginanothertextbox.	60
+22.	WriteaprogramtocreateaDLLtoprintafactorialofanumber.	62
+23.	WriteanApplicationto	64
+1.	GenerateFibonacciseries	64
+2.	Testforprimenumbers	64
+3.	Testforvowels	64
+4.	Reverse anumber	64
+23.	Create a simple web page to demonstrate use of built in DivideByZeroException andIndexOutOfRangeExceptionexceptionsusingtextboxandlabelcontrol	66
+24.	Create a simple web page to show data in Tree view control and datalist using web. Sitemap filecontainingnavigationinformation	68
+25.	Displaytheno.ofvisitorsonagivenwebpage.	70
+27.	Create a registration form having text fields for accepting, Name, Age, Email, Address and Mobilenumber.Performthefollowingvalidationsforthesame:	72
+1.	Allfieldsneedtobefilledcompulsorily	72
+ 
+2.	Nameshouldcontainonlyalphabetsandshouldnotbemorethan 25 characterslong	72
+3.	Validateemailandmobilenumberappropriately	72
+4.	Ageshouldbebetween18and32only	72
+Include submit and cancel buttons. On click of submit button, open a new page and display all theinformationenteredbytheuserandonclickofcancelbutton,alltextfieldsshouldbecleared.	72
+30.	Create a webpage with multiline textbox and two buttons, viz. saveContents and loadContents.On click of saveContents button, contents from the textbox should be retained and on click ofloadContentsbutton,thepreviouslysavedcontentsshouldbedisplayedbackonthetextbox.	77
+Codes:	77
+31.	Store 3 objects of the furniture class having 3 data members (name, manufacturer, and cost) in 3session objects. Display a panel to include a listbox displaying the names of all three furnitureobjects, and a button named “MoreInformation”. On click of the button retrieve the selected object(fromlistbox)informationanddisplayitinalabel	79
+32.	WriteaprograminC#todemonstratemultipleinheritanceusinginterfaces.	82
+ 
+1.	CreateaXMLdocumentforstudentdatabaseandapplythestylesheeteffectsand displayon webpage
+Student.xml:
+<?xmlversion="1.0"encoding="UTF-8"?>
+<?xml-stylesheettype="text/css"href="StyleSheet.css"?>
+<students>
+<heading>Studentdatabase</heading>
+<student>
+<id>RollNo:00009</id>
+<name>Name:SatyamGupta</name>
+<Class>TY-Bsc</Class>
+<division>A</division>
+<Subject>InformationTechnology</Subject>
+<Phone>8433508332</Phone>
+<Address>JuhuKoliwada,HbGawdeMarg,SantacruzWestMum-49</Address>
+</student>
+
+<student>
+<id>RollNo:00015</id>
+<name>Name:NumanKhan</name>
+<Class>TY-Bsc</Class>
+<division>A</division>
+<Subject>InformationTechnology</Subject>
+<Phone>9667845120</Phone>
+<Address>KharDanda,KharWest,Mum-52</Address>
+</student>
+
+<student>
+<id>RollNo:00025</id>
+<name>Name:SalmanKhan</name>
+<Class>TY-Bsc</Class>
+<division>A</division>
+<Subject>ComputerScience</Subject>
+<Phone>8433508332</Phone>
+<Address>3, Galaxy Apartments, BJ Road Band Stand, Bandra West, Mumbai, Maharashtra –400050,India</Address>
+</student>
+
+<student>
+<id>RollNo:00901</id>
+<name>Name:SangamYadav</name>
+<Class>SY-Bsc</Class>
+<division>A</division>
+<Subject>InformationTechnology</Subject>
+<Phone>841623832</Phone>
+<Address>JuhuKoliwada,HbGawdeMarg,SantacruzWestMum-49</Address>
+</student>
+
+<student>
+<id>RollNo:001450</id>
+<name>Name:RajuRastogi</name>
+<Class>TY-Bsc</Class>
+<division>A</division>
+<Subject>InformationTechnology</Subject>
+<Phone>8433508332</Phone>
+<Address>MumbaiMaharashtra</Address></student></students>
+
+StyleSheet.css
+students
+{
+font-size:80%;
+ 
+margin:0.5em;
+font-family: Verdana;display:block;
+}
+student{display:block;
+border: 1px solid silver;margin: 0.5em;padding:0.5em;
+background-color:whitesmoke;
+}
+heading{display:block;
+font-weight: bolder;text-align: center;font-size:30px;
+background-color: green;color:white;
+}
+id {
+font-family: 'Cascadia Code';font-size:30px;
+font-weight:bold;
+}
+name, Class, division, Subject,Phone,Address {display:block
+}
+ 
+2.	Create a simple web page containing the student details (Roll No, Name,Class,Phone,Email).WriteaprogramtostorethedatainthedatabaseandretrieveitusingData readerintabularformat.
+Codes:
+ 
+Deafult.aspx
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default.aspx.cs"Inherits="_Default"%>
+<!DOCTYPEhtml>
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+</head>
+<body>
+<formid="form1"runat="server">
+<div>
+<table>
+<tr><td>RollNo</td><td>
+<asp:TextBoxID="TextBox1"runat="server"></asp:TextBox>
+</td></tr>
+<tr><td>Name</td><td>
+<asp:TextBoxID="TextBox2"runat="server"></asp:TextBox>
+</td></tr>
+<tr><td>Class</td><td>
+<asp:TextBoxID="TextBox3"runat="server"></asp:TextBox>
+</td></tr>
+<tr><td>Phone</td><td>
+<asp:TextBoxID="TextBox4"runat="server"></asp:TextBox>
+</td></tr>
+<tr><td>Email</td><td>
+<asp:TextBoxID="TextBox5"runat="server"></asp:TextBox>
+</td></tr>
+<tr><td>
+<asp:ButtonID="Button1"runat="server"Text="Submit"OnClick="Button1_Click"/>
+</td><td>
+<asp:ButtonID="Button2"runat="server"Text="Retreive"OnClick="Button2_Click"/>
+</td></tr>
+</table>
+</div>
+<p><asp:LabelID="Label1"runat="server"Text="Label"></asp:Label></p>
+</form>
+</body>
+</html>Default.aspx.csusing System;
+usingSystem.Collections.Generic;
+ 
+using System.Linq;using System.Web;usingSystem.Web.UI;
+using System.Web.UI.WebControls;using System.Data.SqlClient;
+usingSystem.Linq.Expressions;
+
+publicpartialclass_Default:System.Web.UI.Page
+{
+SqlConnectioncon =newSqlConnection("DataSource=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Admin\\OneDrive\\Documents\\"+
+"Practical2.mdf;Integrated Security=True;Connect Timeout=30");protected voidPage_Load(objectsender, EventArgse)
+{
+
+}
+
+protectedvoidButton1_Click(objectsender,EventArgse)
+{
+try{
+stringInsertQuery= "insertintop2values("+TextBox1.Text+",'"+ TextBox2.Text+"','"+TextBox3.Text
++ "','" + TextBox4.Text + "','" + TextBox5.Text + "') ";SqlCommandcmd=newSqlCommand(InsertQuery, con);con.Open();
+cmd.ExecuteNonQuery();//UseforinsertupdateanddeleteOnly(*Required)
+
+}
+catch(ExceptionE)
+{
+Response.Write(E.Message);
+}
+finally
+{
+if(con.State==System.Data.ConnectionState.Closed)
+{
+
+}
+else
+{
+con.Close();
+}
+}
+
+}
+
+protectedvoidButton2_Click(objectsender,EventArgse)
+{
+try
+{
+stringSELECTQuery="Select*fromp2";
+SqlCommandcmd=newSqlCommand(SELECTQuery,con);con.Open();
+SqlDataReadersdr=cmd.ExecuteReader();stringtbl="<table>";
+if(sdr.HasRows)
+{
+while(sdr.Read())
+{
+tbl+="<tr><td>"+sdr[0]+"</td><td>"+sdr[1]+"</td><td>"+sdr[2]+"</td><td>"+sdr[4]
++"</td></tr>";
+}
+}
+tbl+="</table>";
+ 
+Label1.Text=tbl;
+
+}
+catch(ExceptionE)
+{
+Response.Write(E.Message);
+}
+finally
+{
+if(con.State==System.Data.ConnectionState.Closed)
+{
+
+}
+else
+{
+con.Close();
+}
+}
+}
+}
+
+
+
+
+
+
+ 
+3.	Createasimplewebpagewithvarioussevercontrolstodemonstratesettinganduseoftheir properties.(Example:AutoPostBack)
+1.	Onclick of a button control display the selected items from the listbox in atextbox. Also in the same webpage display the name of the selected item from theDropDownList1 in a label. Also change the font size of the same label accordingtothefontsizeselectedfromtheDropdownlist2.
+
+Design:
+ 
+
+Default.aspx
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default.aspx.cs"Inherits="_Default"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+</head>
+<body>
+<formid="form1"runat="server">
+<div>
+<asp:ListBoxID="ListBox1"runat="server">
+<asp:ListItem>Satyam</asp:ListItem>
+<asp:ListItem>Shivam</asp:ListItem>
+<asp:ListItem>Sundaram</asp:ListItem>
+<asp:ListItem>Sattie</asp:ListItem>
+<asp:ListItem>Sattu</asp:ListItem>
+</asp:ListBox>
+<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<asp:TextBoxID="TextBox1"runat="server"></asp:TextBox>
+<br/>
+<br/>
+<br/>
+<asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True"OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+<asp:ListItem>Satyam</asp:ListItem>
+<asp:ListItem>Shivam</asp:ListItem>
+<asp:ListItem>Sundaram</asp:ListItem>
+<asp:ListItem>Sattie</asp:ListItem>
+<asp:ListItem>Sattu</asp:ListItem>
+</asp:DropDownList>
+ 
+<asp:LabelID="Label1"runat="server"Text="Label"></asp:Label>
+<asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True"OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
+<asp:ListItem>10</asp:ListItem>
+<asp:ListItem>20</asp:ListItem>
+<asp:ListItem>30</asp:ListItem>
+<asp:ListItem>40</asp:ListItem>
+<asp:ListItem>45</asp:ListItem>
+</asp:DropDownList>
+</div>
+</form>
+</body>
+</html>Default.aspx.cs
+
+usingSystem;
+using System.Collections.Generic;using System.Linq;
+using System.Web;usingSystem.Web.UI;
+usingSystem.Web.UI.WebControls;
+
+publicpartialclass_Default:System.Web.UI.Page
+{
+protectedvoidPage_Load(objectsender,EventArgse)
+{
+
+}
+
+protectedvoidButton1_Click(objectsender,EventArgse)
+{
+TextBox1.Text=ListBox1.SelectedValue.ToString();
+}
+
+protectedvoidDropDownList1_SelectedIndexChanged(objectsender,EventArgse)
+{
+Label1.Text=DropDownList1.SelectedValue.ToString();
+}
+
+protectedvoidDropDownList2_SelectedIndexChanged(objectsender,EventArgse)
+{
+Label1.Font.Size=Convert.ToInt32(DropDownList2.SelectedValue);
+}
+}
+
+2.	playImagecontrolforphoto.
+Design:
+ 
+Deafault.aspx
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default.aspx.cs"Inherits="_Default"%>
+<!DOCTYPEhtml>
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+<styletype="text/css">
+.auto-style1{
+text-align:center;
+}
+</style>
+</head>
+<body>
+<formid="form1"runat="server">
+<divclass="auto-style1">
+<asp:Image ID="Image1" runat="server" Height="282px" ImageUrl="~/IMG-20220324-WA0008.jpg"Width="234px"/>
+<br/>
+<strong>ImageControl</strong></div>
+</form>
+</body>
+</html>
+
+
+3.	CheckBoxesprovidesspecialformatting(viz.underline, bold,italic)andRadio Buttons provides color for label. 4. Use of AutoPostBack property.Design:
+ 
+Defualt.aspx
+<%@ Page Language="C#" MaintainScrollPositionOnPostback ="true" AutoEventWireup="true"CodeFile="Default.aspx.cs"Inherits="_Default"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+</head>
+<body>
+<formid="form1"runat="server">
+<asp:LabelID="Label1"runat="server"Text="IamSatyamGupta"></asp:Label>
+<br/>
+<br/>
+<strong>Format:</strong><br/>
+<asp:CheckBox ID="CheckBox1" runat="server" AutoPostBack="True"OnCheckedChanged="CheckBox1_CheckedChanged"Text="BOLD"/>
+<br />
+<asp:CheckBox ID="CheckBox3" runat="server" AutoPostBack="True"OnCheckedChanged="CheckBox3_CheckedChanged"Text="ITALIC"/>
+<br />
+<asp:CheckBox ID="CheckBox2" runat="server" AutoPostBack="True"OnCheckedChanged="CheckBox2_CheckedChanged"Text="UNDERLINE"/>
+<strong>
+<br/>
+<br/>
+Colors:</strong>
+<br />
+<asp:RadioButton ID="RadioButton1" runat="server" AutoPostBack="True" GroupName="Color"OnCheckedChanged="RadioButton1_CheckedChanged"Text="Blue"/>
+<asp:RadioButton ID="RadioButton2" runat="server" AutoPostBack="True" GroupName="Color"OnCheckedChanged="RadioButton2_CheckedChanged"Text="Red"/>
+<asp:RadioButton ID="RadioButton3" runat="server" AutoPostBack="True" GroupName="Color"OnCheckedChanged="RadioButton3_CheckedChanged"Text="Green"/>
+<asp:RadioButton ID="RadioButton4" runat="server" AutoPostBack="True" GroupName="Color"OnCheckedChanged="RadioButton4_CheckedChanged"Text="Yellow"/>
+</form>
+</body>
+</html>
+
+Default.aspx.csusing System;
+Using System.Collections.Generic;using System.Linq;
+using System.Web;usingSystem.Web.UI;
+usingSystem.Web.UI.WebControls;
+
+publicpartialclass_Default:System.Web.UI.Page
+{
+protectedvoidPage_Load(objectsender,EventArgse)
+{
+
+}
+protectedvoidCheckBox1_CheckedChanged(objectsender,EventArgse)
+{
+if(CheckBox1.Checked)
+{
+Label1.Font.Bold=true;
+}
+else
+{
+Label1.Font.Bold=false;
+}
+}
+protectedvoidCheckBox3_CheckedChanged(objectsender,EventArgse)
+{
+if(CheckBox3.Checked)
+{
+Label1.Font.Italic=true;
+}
+else
+{
+Label1.Font.Italic=false;
+}
+}
+protectedvoidCheckBox2_CheckedChanged(objectsender,EventArgse)
+{
+if(CheckBox2.Checked)
+{
+Label1.Font.Underline=true;
+}
+else
+{Label1.Font.Underline= false;}
+}
+protectedvoidRadioButton1_CheckedChanged(objectsender,EventArgse)
+{
+Label1.ForeColor=System.Drawing.Color.Blue;
+}
+protectedvoidRadioButton2_CheckedChanged(objectsender,EventArgse)
+{
+Label1.ForeColor=System.Drawing.Color.Red;
+}
+protectedvoidRadioButton3_CheckedChanged(objectsender,EventArgse)
+{
+Label1.ForeColor=System.Drawing.Color.Green;
+}
+
+protectedvoidRadioButton4_CheckedChanged(objectsender,EventArgse)
+{
+Label1.ForeColor=System.Drawing.Color.Yellow;
+}}
+ 
+4.	Createasimplewebpagetocountthenumberoftimesthecurrentwebpage issubmittedtotheserver onclickeventofaButton.
+Design:
+ 
+Default.aspx
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default.aspx.cs"Inherits="_Default"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+</head>
+<body>
+<formid="form1"runat="server">
+<div>
+&nbsp;TotalCounts:&nbsp;&nbsp;
+<asp:LabelID="Label1"runat="server"Text="Label"></asp:Label>
+<br/>
+<br/>
+<br/>
+<asp:ButtonID="Button1"runat="server"OnClick="Button1_Click"Text="Button"/>
+</div>
+</form>
+</body>
+</html>Default.aspx.csusing System;
+publicpartialclass_Default:System.Web.UI.Page
+{
+protectedvoidPage_Load(objectsender,EventArgse)
+{
+
+}
+protectedvoidButton1_Click(objectsender,EventArgse)
+{
+//In thismethod onlythecountwillbedifferentin differenttabsofthesamewebpage
+//ViewState["a"]=Convert.ToInt32(ViewState["a"])+1;
+//Label1.Text=ViewState["a"].ToString();
+
+Application["a"] = Convert.ToInt32(Application["a"]) + 1;Label1.Text=Application["a"].ToString();
+
+}}
+ 
+5.	Createsimpleapplicationtoperformfollowingoperations
+i.	FindingfactorialValue
+ii.	MoneyConversion
+iii.	Cubeofgivennumber
+iv.	GenerateFibonacciseries
+
+Codes:
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default.aspx.cs"Inherits="_Default"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+<styletype="text/css">
+.auto-style1{
+text-align:center;
+}
+.auto-style2 {color:#0099CC;
+}
+</style>
+</head>
+<body>
+<formid="form1"runat="server">
+<divclass="auto-style1">
+<h1><spanclass="auto-style2"><strong>CodeBySatyam09</strong></span></h1>
+<br/>
+<asp:TextBoxID="TextBox1"runat="server"Width="164px"></asp:TextBox>
+<asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True"OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+<asp:ListItemValue="1">Factorial</asp:ListItem>
+<asp:ListItemValue="2">RStoUSD</asp:ListItem>
+<asp:ListItemValue="3">Cube</asp:ListItem>
+<asp:ListItemValue="4">Fibonacci</asp:ListItem>
+</asp:DropDownList>
+<br/>
+<br/>
+<br/>
+<h2>
+<asp:LabelID="Label1"runat="server"Text="Result"></asp:Label>
+</h2>
+</div>
+</form>
+</body>
+</html>
+
+C# Code:
+usingSystem;
+using System.Collections.Generic;usingSystem.Drawing;
+using System.Linq;using System.Web;usingSystem.Web.UI;
+usingSystem.Web.UI.WebControls;
+
+publicpartialclass_Default:System.Web.UI.Page
+{
+protectedvoidPage_Load(objectsender,EventArgse)
+{
+
+}
+
+protectedvoidDropDownList1_SelectedIndexChanged(objectsender,EventArgse)
+{
+if(DropDownList1.SelectedValue=="1")
+{
+Label1.Text=Factorail(Convert.ToInt32(TextBox1.Text));
+}
+elseif(DropDownList1.SelectedValue=="2")
+{
+Label1.Text=Money(Convert.ToDouble(TextBox1.Text));
+}
+elseif(DropDownList1.SelectedValue=="3")
+{
+Label1.Text=Cube(Convert.ToInt32(TextBox1.Text));
+}
+elseif(DropDownList1.SelectedValue=="4")
+{
+Label1.Text=Fibonacci(Convert.ToInt32(TextBox1.Text));
+}
+
+}
+publicstringFactorail(intnum)
+{
+intfact=1;
+for(inti= 1;i< num;i++)
+{
+fact*=i;
+}
+returnfact.ToString();
+}
+
+publicstringMoney(doublen)
+{
+double d = n / 82.31;returnd.ToString();
+}
+
+publicstringCube(doublen)
+{
+
+return(n*n*n).ToString();
+}
+
+publicstringFibonacci(intn)
+{
+int n1 = 0, n2 = 1;intn3;
+stringfs ="";
+fs=n1 +""+n2+"";
+for(inti=2;i<n;++i)
+{
+n3 = n1 + n2;fs+=n3+"";n1 =n2;
+n2 =n3;
+}
+returnfs;
+}
+}
+
+ 
+6.	DemonstratetheuseofCalendarcontroltoperformfollowingoperations.
+a)	Displaymessagesinacalendarcontrol
+b)	Displayvacationina calendar control
+c)	Selecteddayinacalendarcontrolusingstyle
+d)	Differencebetweentwocalendardates
+
+
+Codes:
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default.aspx.cs"Inherits="_Default"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+<styletype="text/css">
+.auto-style1{
+text-align:center;
+}
+.auto-style2{
+text-align:center;
+}
+.auto-style3 {color:#339933;
+text-decoration:underline;
+}
+</style>
+</head>
+<body>
+<formid="form1"runat="server">
+<divclass="auto-style2">
+<asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="Black" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="250px" OnDayRender="Calendar1_DayRender"OnSelectionChanged="Calendar1_SelectionChanged" Width="330px" BorderStyle="Solid" CellSpacing="1"CssClass="auto-style1"NextPrevFormat="ShortMonth">
+<DayHeaderStyleFont-Bold="True"Height="8pt"Font-Size="8pt"ForeColor="#333333"/>
+<DayStyleBackColor="#CCCCCC"/>
+<NextPrevStyleFont-Size="8pt"ForeColor="White"Font-Bold="True"/>
+<OtherMonthDayStyleForeColor="#999999"/>
+<SelectedDayStyleBackColor="#333399"ForeColor="White"/>
+<TitleStyle BackColor="#333399" Font-Bold="True" Font-Size="12pt" ForeColor="White"BorderStyle="Solid"Height="12pt"/>
+<TodayDayStyleBackColor="#999999"ForeColor="White"/>
+</asp:Calendar>
+<asp:Calendar ID="Calendar2" runat="server" BackColor="White" BorderColor="White"BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" Width="350px"NextPrevFormat="FullMonth">
+<DayHeaderStyleFont-Bold="True"Font-Size="8pt"/>
+<NextPrevStyleFont-Size="8pt"ForeColor="#333333"Font-Bold="True"VerticalAlign="Bottom"/>
+<OtherMonthDayStyleForeColor="#999999"/>
+<SelectedDayStyleBackColor="#333399"ForeColor="White"/>
+<TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt"ForeColor="#333399"/>
+<TodayDayStyleBackColor="#CCCCCC"/>
+</asp:Calendar>
+<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<asp:ButtonID="Button1"runat="server"OnClick="Button1_Click"Text="Button"/>
+<strong>
+<brclass="auto-style3"/>
+<h1><spanclass="auto-style3">Satyam09</span></h1>
+</strong>
+<br/>
+<br/>
+&nbsp;
+</div>
+</form>
+</body>
+</html>
+
+C# Code:
+usingSystem;
+using System.Collections.Generic;using System.Linq;
+using System.Web;usingSystem.Web.UI;
+usingSystem.Web.UI.WebControls;
+
+publicpartialclass_Default:System.Web.UI.Page
+{
+protectedvoidPage_Load(objectsender,EventArgse)
+{
+}
+protectedvoidCalendar1_DayRender(objectsender,DayRenderEventArgse)
+{
+if(e.Day.Date.Year==2022&&e.Day.Date.Month ==10&&e.Day.Date.Day==5)
+{
+Label l1 = new Label();l1.Text="<br>ganpati";e.Cell.Controls.Add(l1);
+}
+
+if(e.Day.Date.Year==2022&&e.Day.Date.Month==10&& e.Day.Date.Day==15)
+{
+Labell1=newLabel();l1.Text="<br>TYITPrelims";e.Cell.Controls.Add(l1);
+}
+}
+
+protectedvoidCalendar1_SelectionChanged(objectsender,EventArgse)
+{
+Calendar1.SelectedDayStyle.BackColor =System.Drawing.Color.Red;
+Calendar1.SelectedDayStyle.ForeColor=System.Drawing.Color.Yellow;
+}
+
+protectedvoidButton1_Click(objectsender,EventArgse)
+{
+TimeSpan ts = Calendar1.SelectedDate - Calendar2.SelectedDate;Label1.Text=ts.TotalDays.ToString();
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7.	Create Web Form to demonstrate use of User Control. Create footernamed user control having copyright reserved (ex. “©company name”) anduseitinawebpage.
+footer.ascx
+<%@ControlLanguage="C#"AutoEventWireup="true"CodeFile="Footer.ascx.cs"Inherits="Footer"%>
+<div style="font-family: 'Arial Black'; font-size: xx-large; font-weight: 200; font-style: normal; font-variant: small-caps; text-transform: uppercase; color: #FF0000; line-height: inherit; vertical-align: middle; text-align: justify; text-indent: inherit; white-space: pre; word-spacing: inherit; letter-spacing: inherit; background-color: #00FFFF;background-image: inherit; background-repeat: repeat-x; background-attachment: scroll; background-position: centercenter; border: thick double #008000; padding: inherit; margin: inherit; position: fixed; z-index: inherit; width: inherit;height: inherit; visibility: visible; display: table-column; float: none; clear: both; cursor: move; table-layout: fixed">@CopyrightSatyam.com
+</div>
+
+Default.aspx:
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default.aspx.cs"Inherits="_Default"%>
+
+<%@Registersrc="Footer.ascx"tagname="Footer"tagprefix="uc1"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+<styletype="text/css">
+.auto-style1{
+text-align: center;color:#3366FF;
+}
+</style>
+</head>
+<body>
+<formid="form1"runat="server">
+<divclass="auto-style1">
+<h1><strong>SatyamGupta</strong></h1>
+</div>
+<uc1:FooterID="Footer1"runat="server"/>
+</form>
+</body>
+</html>
+
+
+ 
+8.	CreateWebFormtodemonstrateuseofAdrotatorControlwithfiveadvertisements.Alsodemonstratehowkeywordfilter works.
+Design:
+ 
+
+Code:
+<body>
+<formid="form1"runat="server">
+<divclass="auto-style1">
+<h1style="text-align:center">ADRotator</h1>
+<h4>
+<asp:AdRotatorAdvertisementFile="~/XMLFile.xml"ID="AdRotator1"runat="server"Target="_blank"/>
+<br/>
+<br/>
+<br/>
+BySatyamGupta09</h4>
+</div>
+</form>
+</body>
+Web.xml
+<?xmlversion="1.0"encoding="utf-8"?>
+<Advertisements>
+<Ad>
+ 
+
+
+
+
+
+
+
+
+
+</Ad>
+
+<Ad>
+
+
+
+
+
+
+</Ad>
+ 
+<ImageUrl>~/Pic/TMKOC.jpg</ImageUrl>
+<Height>300px</Height>
+<Width>550px</Width>
+
+<NavigateUrl>https://www.youtube.com/c/TaarakMehtaKaOoltahChashmah</NavigateUrl>
+<AlternateText>
+TarakMehta kaOolta Chashma
+</AlternateText>
+<Impressions>20</Impressions>
+<Keyword>FamilyShow</Keyword>
+
+
+
+<ImageUrl>~/Pic/the-kapil-sharma-show.jpg</ImageUrl>
+<Height>300px</Height>
+<Width>550px</Width>
+<NavigateUrl>https://www.youtube.com/c/KapilSharmaK9</NavigateUrl>
+<AlternateText>Watchtheshow</AlternateText>
+<Impressions>15</Impressions>
+<Keyword>ComedyShow</Keyword>
+ 
+</Advertisements>
+
+
+
+ 
+9.	Create XML file employees with nodes (eid, ename, edept, salary). Bindtheeidandenametoadropdownlistandtheenameshouldbein theascendingorder.
+
+SourceCode:
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default.aspx.cs"Inherits="_Default"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+<styletype="text/css">
+.auto-style1{
+text-align:center;
+}
+</style>
+</head>
+<body>
+<formid="form1"runat="server">
+<divclass="auto-style1">
+<asp:DropDownListID="DropDownList1"runat="server">
+</asp:DropDownList>
+<br/>
+<br/>
+RollNo:09
+</div>
+</form>
+</body>
+</html>
+
+CsCode:
+usingSystem;
+using System.Collections.Generic;using System.Linq;
+using System.Web;usingSystem.Web.UI;
+using System.Web.UI.WebControls;using System.Data;
+publicpartialclass_Default:System.Web.UI.Page
+{
+protectedvoidPage_Load(objectsender,EventArgse)
+{
+DataSet ds = new DataSet();ds.ReadXml("C:\\Users\\Admin\\source\\repos\\P9\\P9\\XMLFile.xml");ds.Tables[0].DefaultView.Sort = "ename";// For Ascending OrderDropDownList1.DataSource=ds.Tables[0];DropDownList1.DataTextField = "ename";DropDownList1.DataValueField = "eid";DropDownList1.DataBind();
+}
+
+}
+Output:
+
+
+10.	Createsimplewebpagethattakesanumberasinputanddisplayitfourtimes in a row (separated by blank spaces), and then four times in the nextrow,with noseparation.Like-
+Enteradigit:22ExpectedOutput:
+2222 22 22
+22222222
+2222 22 22
+22222222
+
+Codes:
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default2.aspx.cs"Inherits="Default2"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+</head>
+<body>
+<formid="form1"runat="server">
+<div>
+
+Enteradigit:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<asp:TextBox ID="TextBox1" runat="server" AutoPostBack="True"OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+<br/>
+<br/>
+<br/>
+<asp:LabelID="Label1"runat="server"Text="Label"></asp:Label>
+
+</div>
+</form>
+<p>
+@SatyamGupta09</p>
+</body>
+</html>
+CScodes:
+usingSystem;
+using System.Collections.Generic;using System.Linq;
+using System.Web;usingSystem.Web.UI;
+usingSystem.Web.UI.WebControls;
+
+publicpartialclassDefault2 :System.Web.UI.Page
+{
+protectedvoidPage_Load(objectsender,EventArgse)
+{
+
+}
+
+protectedvoidTextBox1_TextChanged(objectsender,EventArgse)
+{
+Label1.Text="";
+intnumber=Convert.ToInt32(TextBox1.Text);for(inti=0;i<4;++i)
+{
+if(i%2 ==0)
+{
+for(intj=0;j<4;++j)
+{
+Label1.Text+=number.ToString();
+}
+Label1.Text += "<br>";if(i%2==0)
+{
+for(intj=0;j<4;++j)
+{
+Label1.Text+=number.ToString()+"";
+}
+Label1.Text+="<br>";
+}
+}
+}
+}
+}
+
+ 
+11.	Create a simple web page to display the Date properties (year, month,day,hour,minute,second,millisecondetc.)aswellastodisplaythenumberofdaysoftheyearbetweentwospecifiedyears.
+
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default3.aspx.cs"Inherits="Default3"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+<styletype="text/css">
+.auto-style1{
+font-size:xx-large;
+}
+</style>
+</head>
+<body>
+<formid="form1"runat="server">
+<div class="auto-style1">SatyamGupta09<br/>
+<br/>
+<br/>
+<asp:ButtonID="Button1"runat="server"OnClick="Button1_Click"Text="Button"/>
+<br/>
+<br/>
+NumberofDays:
+<asp:LabelID="Label1"runat="server"Text="Label"></asp:Label>
+</div>
+</form>
+</body>
+</html>
+
+usingSystem;
+using System.Collections.Generic;using System.Linq;
+using System.Web;usingSystem.Web.UI;
+usingSystem.Web.UI.WebControls;
+
+publicpartialclassDefault3 :System.Web.UI.Page
+{
+ 
+protectedvoidPage_Load(objectsender,EventArgse)
+{
+
+}
+
+protectedvoidButton1_Click(objectsender,EventArgse)
+{
+DateTime date = DateTime.Now;Response.Write(date+"<br>");Response.Write(date.Year+"<br>");Response.Write(date.Month+"<br>");Response.Write(date.Day+"<br>");Response.Write(date.Hour+"<br>");Response.Write(date.Minute+ "<br>");Response.Write(date.Second+ "<br>");Response.Write(date.Millisecond+"<br>");
+
+DateTimedt1=newDateTime(2002,05,02);
+DateTimedt2= newDateTime(2022,10,16);
+
+TimeSpants=dt2-dt1;
+Label1.Text=ts.TotalDays.ToString();
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12.	Create a web page containing the student details (RollNo, Name, Class,Phone,Email)andshowresultusingDatabindinganddropdownlistcontrol.
+Codes:
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default.aspx.cs"Inherits="_Default"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+<styletype="text/css">
+.auto-style1 {width:100%;
+}
+.auto-style2{
+text-align: justify;color:#660066;
+}
+.auto-style3{
+text-align:center;
+}
+</style>
+</head>
+<body>
+<formid="form1"runat="server">
+<div>
+<tableclass="auto-style1">
+<tr>
+<td>
+<h1class="auto-style2">SatyamGupta&nbsp;&nbsp;09</h1>
+<pclass="auto-style2">&nbsp;</p>
+<pclass="auto-style2">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td>
+<asp:DropDownListID="DropDownList1"runat="server"CssClass="auto-style3">
+</asp:DropDownList>
+</td>
+</tr>
+</table>
+</div>
+</form>
+</body>
+</html>
+CScode:
+usingSystem;
+using System.Collections.Generic;using System.Linq;
+using System.Web;usingSystem.Web.UI;
+using System.Web.UI.WebControls;using System.Data;
+usingSystem.Activities.Expressions;
+
+publicpartialclass_Default:System.Web.UI.Page
+{
+protectedvoidPage_Load(objectsender,EventArgse)
+{
+if(!this.IsPostBack)
+{
+List<string> list = new List<string>();list.Add("09");
+list.Add("Satyam Gupta");list.Add("TYIT");list.Add("8433508332");
+list.Add("Sg80412111@gmail.com");
+
+DropDownList1.DataSource = list;DropDownList1.DataBind();
+}
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14.	Createasimplewebpagetodemonstrateallstringoperations.
+Codes:
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default.aspx.cs"Inherits="_Default"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+</head>
+<body>
+<formid="form1"runat="server">
+<div>
+<asp:TextBoxID="TextBox1"runat="server"></asp:TextBox>
+<br/>
+<asp:ButtonID="Button1"runat="server"OnClick="Button1_Click"Text="Button"/>
+</div>
+
+</form>
+</body>
+</html>
+CSCode:
+usingSystem;
+using System.Collections.Generic;using System.Linq;
+using System.Web;usingSystem.Web.UI;
+usingSystem.Web.UI.WebControls;
+
+publicpartialclass_Default:System.Web.UI.Page
+{
+protectedvoidPage_Load(objectsender,EventArgse)
+{
+
+}
+protectedvoidButton1_Click(objectsender,EventArgse)
+{
+string st = TextBox1.Text;Response.Write(st.ToUpper() + "<br>");Response.Write(st.ToLower() + "<br>");Response.Write(st.Substring(0, 5) + "<br>");Response.Write(st.StartsWith("Sat") +"<br>");Response.Write(st.IndexOf("yam") + "<br>");Response.Write(st.Insert(1,"x")+"<br>");
+}
+} 
+15.	Designanasp.netwebpagewith2groupsofRadioButtons,DropDownList,labelandTextBoxtoperformthefollowingoperations:-Onclick of Radio Buttons each at the same time from two different groups,change the font- size and font-face of the label’s Text. Also on the samewebpage show that, on selecting a country name from the dropdown list, itsrespectivecountry codegetsdisplayed in a textbox
+Design:
+Codes:
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default.aspx.cs"Inherits="_Default"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+<styletype="text/css">
+.auto-style1{
+text-align:center;
+}
+.auto-style2{}
+</style>
+</head>
+<body>
+<formid="form1"runat="server">
+<divclass="auto-style1">
+
+<h1>SatyamGupta09</h1>
+<p>
+<asp:RadioButton ID="RadioButton1" runat="server" GroupName="Font-Size"OnCheckedChanged="RadioButton1_CheckedChanged"Text="Bahnschrift"/>
+&nbsp;<asp:RadioButton ID="RadioButton2" runat="server" GroupName="Font-Size" Text="Cambria Math" />&nbsp;<asp:RadioButtonID="RadioButton3"runat="server"GroupName="Font-Size"Text="Symbol"/>
+</p>
+<p>
+<asp:RadioButton ID="RadioButton4" runat="server" GroupName="Font-Face"OnCheckedChanged="fontchanged"Text="10"/>
+<asp:RadioButton ID="RadioButton5" runat="server" GroupName="Font-Face"OnCheckedChanged="fontchanged"Text="20"/>
+<asp:RadioButton ID="RadioButton6" runat="server" GroupName="Font-Face"OnCheckedChanged="fontchanged"Text="30"/>
+</p>
+<p>
+<asp:LabelID="Label1"runat="server"Text="SatyamGupta"></asp:Label>
+</p>
+<p>
+<asp:DropDownList ID="DropDownList1" runat="server" CssClass="auto-style2" Height="26px"Width="91px"AutoPostBack="True"OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+<asp:ListItem>India</asp:ListItem>
+<asp:ListItem>Nepal</asp:ListItem>
+<asp:ListItem>Pakistan</asp:ListItem>
+<asp:ListItem>SaudiaArbia</asp:ListItem>
+</asp:DropDownList>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<asp:TextBoxID="TextBox1"runat="server"></asp:TextBox>
+</p>
+<p>
+&nbsp;</p>
+</div>
+</form>
+</body>
+</html>
+
+Cscode:
+usingSystem;
+using System.Collections.Generic;usingSystem.Drawing;
+using System.Linq;using System.Web;usingSystem.Web.UI;
+usingSystem.Web.UI.WebControls;
+
+publicpartialclass_Default:System.Web.UI.Page
+{
+protectedvoidPage_Load(objectsender,EventArgse)
+{
+
+}
+protected voidRadioButton1_CheckedChanged(objectsender, EventArgse)
+{
+Label1.Font.Name=((RadioButton)sender).Text;
+}
+
+protectedvoid fontchanged(objectsender,EventArgse)
+{
+Label1.Font.Size=Convert.ToInt32(((RadioButton)sender).Text);
+}
+
+protectedvoidDropDownList1_SelectedIndexChanged(objectsender,EventArgse)
+{
+if(DropDownList1.SelectedValue=="India")
+{
+TextBox1.Text="+91";
+}  }}
+Create a delegate del1. Create display1() and display2() static methods.Create a simple application to call these two methods by the through thedelegate.
+Codes:
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default2.aspx.cs"Inherits="Default2"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+</head>
+<body>
+<formid="form1"runat="server">
+<div>
+</div>
+</form>
+</body>
+</html>
+cscode:
+usingSystem;
+using System.Collections.Generic;using System.Linq;
+using System.Web;usingSystem.Web.UI;
+usingSystem.Web.UI.WebControls;
+
+publicpartialclassDefault2 :System.Web.UI.Page
+{
+delegatestringdel();
+protectedvoidPage_Load(objectsender,EventArgse)
+{
+deld1=newdel(display1);deld2=newdel(display2);Response.Write(d1());Response.Write(d2());
+}
+publicstaticstringdisplay1()
+{
+return"display1";
+}
+publicstaticstringdisplay2()
+{
+return"display2";
+}
+}
+
+Createasimplewebpagetoshowhowtowriteandreadacookiefromaclient'scomputer.
+Design:
+ 
+Codes:
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default3.aspx.cs"Inherits="Default3"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+</head>
+<body>
+<formid="form1"runat="server">
+<div>
+<asp:TextBoxID="TextBox1"runat="server"></asp:TextBox>
+<br/>
+<br/>
+<br/>
+<asp:ButtonID="Button1"runat="server"OnClick="Button1_Click"Text="Write"/>
+<br/>
+<br/>
+<asp:ButtonID="Button2"runat="server"OnClick="Button2_Click"Text="Read"/>
+</div>
+</form>
+</body>
+</html>
+
+CsCode:
+usingSystem;
+using System.Collections.Generic;using System.Linq;
+using System.Web;usingSystem.Web.UI;
+usingSystem.Web.UI.WebControls;
+
+publicpartialclassDefault3 :System.Web.UI.Page
+{
+protectedvoidPage_Load(objectsender,EventArgse)
+{
+
+}
+
+protectedvoidButton1_Click(objectsender,EventArgse)
+{
+HttpCookiecook1=newHttpCookie("user1",TextBox1.Text);
+Response.Cookies.Add(cook1);
+}
+
+protectedvoidButton2_Click(objectsender,EventArgse)
+{
+TextBox1.Text=Response.Cookies["user1"].Value;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CreateawebapplicationtodemonstrateuseofHtmlEditorExtenderAjaxcontrol.
+1	RightClickOnToolboxAddNewTab
+ 
+
+ 
+2	RightClickonSolutionExplorerManageNuGetPackages..
+ 
+
+InstallVersion:16.0.1
+ 
+3	Right ClickonSolution ExploresOpenfolderinFileExplorer
+
+
+
+
+
+
+CopytheFollowingDirectory:
+ 
+C:\Users\Admin\source\repos\AjaxControlToolkit\packages\AjaxControlToolkit.16.1.0.0\lib\net40
+
+4Again RightClickonAjaxControlToolkitChooseItems
+ 
+
+PastethatDirectory
+
+YouWillFindHtmlEditorExtender
+ 
+ 
+
+Codes:
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default.aspx.cs"Inherits="_Default"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+<styletype="text/css">
+.auto-style1{
+text-align:center;
+}
+</style>
+</head>
+<body>
+<formid="form1"runat="server">
+<div>
+<h1class="auto-style1">CodeBySatyam09</h1>
+</div>
+<asp:TextBox ID="TextBox1" runat="server" Height="228px" TextMode="MultiLine"Width="513px"></asp:TextBox>
+<ajaxToolkit:HtmlEditorExtender EnableSanitization="false" ID="TextBox1_HtmlEditorExtender"runat="server"BehaviorID="TextBox1_HtmlEditorExtender"TargetControlID="TextBox1">
+</ajaxToolkit:HtmlEditorExtender>
+<asp:ScriptManagerID="ScriptManager1"runat="server">
+</asp:ScriptManager>
+<br/>
+</form>
+</body>
+</html>
+ 
+CreateawebapplicationtodemonstrateuseofMasterPagewithapplying StylesandThemesforpagebeautification.
+MasterPage:
+<%@MasterLanguage="C#"AutoEventWireup="true"CodeFile="MasterPage2.master.cs"Inherits="MasterPage2"
+%>
+
+<!DOCTYPEhtml>
+
+<html>
+<headrunat="server">
+<title></title>
+<asp:ContentPlaceHolderid="head"runat="server">
+</asp:ContentPlaceHolder>
+</head>
+<body>
+<formid="form1"runat="server">
+<div class ="head">head
+
+</div>
+<asp:ContentPlaceHolderid="ContentPlaceHolder1"runat="server">
+
+</asp:ContentPlaceHolder>
+<div class ="foot">foot
+</div>
+</form>
+</body>
+</html>
+Style:
+body{
+background-color:green;
+}
+
+.head{
+border: thick solid #ff6a00;height:200px;
+background-color:aqua
+}
+
+.foot{
+border: thick solid yellow;height:200px;
+}
+
+Default.aspx:
+<%@PageTitle=""EnableTheming="true"Theme="green"Language="C#"MasterPageFile="~/MasterPage2.master"AutoEventWireup="true"CodeFile="Default2.aspx.cs"Inherits="Default2"
+%>
+
+<asp:ContentID="Content1"ContentPlaceHolderID="head"Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">Numan
+MufiArfat
+ 
+FarazSatyamHussainAyaan
+</asp:Content>
+
+ 
+CreateawebapplicationtodemonstrateFormSecurityandWindowsSecuritywithproperAuthenticationandAuthorizationproperties.
+Code:
+AdminHome.aspx-
+<%@Page Language="C#"AutoEventWireup="true"CodeFile="AdminHome.aspx.cs"Inherits="Admin_AdminHome"%>
+
+<!DOCTYPEhtmlPUBLIC"-//W3C//DTDXHTML1.0Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+</head>
+<body>
+<formid="form1"runat="server">
+<div>
+<h1>ThisisAdminPage</h1>
+</div>
+</form>
+</body>
+</html>
+
+StaffHome.aspx-
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="StaffHome.aspx.cs"Inherits="StaffHome"%>
+
+<!DOCTYPEhtmlPUBLIC"-//W3C//DTDXHTML1.0Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+</head>
+<body>
+<formid="form1"runat="server">
+<div>
+<h1>ThisisStaffPage</h1>
+</div>
+</form>
+</body>
+</html>
+
+StudentHome.aspx-
+<%@Page Language="C#"AutoEventWireup="true"CodeFile="StudentHome.aspx.cs"Inherits="StudentHome"%>
+
+<!DOCTYPEhtmlPUBLIC"-//W3C//DTDXHTML1.0Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+</head>
+<body>
+<formid="form1"runat="server">
+<div>
+<h1>Thisisstudetnpage</h1>
+</div>
+</form>
+</body>
+</html>
+
+login.aspx-
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="login.aspx.cs"Inherits="login"%>
+
+<!DOCTYPEhtmlPUBLIC"-//W3C//DTDXHTML1.0Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+</head>
+<body>
+<formid="form1"runat="server">
+<div>
+
+<asp:LoginID="Login1"runat="server">
+</asp:Login>
+
+</div>
+</form>
+</body>
+</html>
+
+
+Home.aspx-
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Home.aspx.cs"Inherits="Home"%>
+
+<!DOCTYPEhtmlPUBLIC"-//W3C//DTDXHTML1.0Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headid="Head1"runat="server">
+<title></title>
+</head>
+<body>
+<formid="form1"runat="server">
+ 
+<div>
+
+<asp:HyperLink ID="HyperLink1" runat="server" Font-Size="Large"NavigateUrl="~/Admin/AdminHome.aspx">Admin</asp:HyperLink>
+<br/>
+<br/>
+<asp:HyperLinkID="HyperLink2"runat="server"Font-Size="Large"NavigateUrl="~/Staff/StaffHome.aspx">Staff</asp:HyperLink>
+<br/>
+<br/>
+<asp:HyperLink ID="HyperLink3" runat="server" Font-Size="Large"NavigateUrl="~/Student/StudentHome.aspx">Student</asp:HyperLink>
+
+</div>
+</form>
+</body>
+</html>
+ 
+CreateawebapplicationtodemonstrateGridViewpagingandCreatingown tableformatusingGrid View.
+Grid View:
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default.aspx.cs"Inherits="_Default"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+</head>
+<body>
+<formid="form1"runat="server">
+<div>
+<asp:DetailsViewID="DetailsView1"runat="server"Height="50px"Width="125px">
+</asp:DetailsView>
+<br/>
+<asp:LabelID="Label1"runat="server"Text="Label"></asp:Label>
+<br/>
+<br/>
+<asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True"AutoGenerateColumns="False"DataKeyNames="RollNo"DataSourceID="SqlDataSource1">
+<Columns>
+<asp:CommandFieldShowDeleteButton="True"ShowEditButton="True"ShowSelectButton="True"/>
+<asp:BoundFieldDataField="RollNo"HeaderText="RollNo"ReadOnly="True"SortExpression="Roll
+ 
+No" />Name"/>
+ 
+
+<asp:BoundFieldDataField="StudentName"HeaderText="StudentName"SortExpression="Student
+
+<asp:BoundFieldDataField="Address"HeaderText="Address"SortExpression="Address"/>
+</Columns>
+ 
+</asp:GridView>
+<br/>
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ConnectionStrings:DatabaseConnectionString%>"DeleteCommand="DELETEFROM[Student]WHERE[RollNo]
+= @Roll_No" InsertCommand="INSERT INTO [Student] ([Roll No], [Student Name], [Address]) VALUES(@Roll_No, @Student_Name, @Address)" SelectCommand="SELECT * FROM [Student]"UpdateCommand="UPDATE [Student] SET [Student Name] = @Student_Name, [Address] = @Address WHERE[RollNo]=@Roll_No">
+<DeleteParameters>
+<asp:ParameterName="Roll_No"Type="Int32"/>
+</DeleteParameters>
+<InsertParameters>
+<asp:ParameterName="Roll_No"Type="Int32"/>
+<asp:ParameterName="Student_Name"Type="String"/>
+<asp:ParameterName="Address"Type="String"/>
+</InsertParameters>
+<UpdateParameters>
+<asp:ParameterName="Student_Name"Type="String"/>
+<asp:ParameterName="Address"Type="String"/>
+<asp:ParameterName="Roll_No"Type="Int32"/>
+</UpdateParameters>
+</asp:SqlDataSource>
+</div>
+</form>
+</body></html>
+ 
+Createawebapplicationtobinddatainamultilinetextboxbyqueryinginanothertextbox.
+Design:
+ 
+Code:
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default2.aspx.cs"Inherits="Default2"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+</head>
+<body>
+<formid="form1"runat="server">
+<div>
+<asp:TextBox ID="TextBox2" Text="<%textdata %>" runat="server" TextMode="MultiLine"Height="67px"Width="199px">&lt;%textdata %&gt;</asp:TextBox>
+<asp:TextBox ID="TextBox3" runat="server" AutoPostBack="True"OnTextChanged="TextBox3_TextChanged"></asp:TextBox>
+</div>
+
+</form>
+</body>
+</html>
+Cscode:
+usingSystem;
+using System.Collections.Generic;using System.Linq;
+using System.Web;usingSystem.Web.UI;
+usingSystem.Web.UI.WebControls;
+
+publicpartialclassDefault2 :System.Web.UI.Page
+{
+publicstringtextdata;
+protectedvoidPage_Load(objectsender,EventArgse)
+{
+}
+protectedvoidTextBox3_TextChanged(objectsender,EventArgse)
+{
+textdata=TextBox3.Text;this.DataBind();
+}
+
+}
+ 
+22.	WriteaprogramtocreateaDLLtoprintafactorialofanumber.
+Design:
+ 
+ClassLibrary:
+namespaceClassLibrary1
+{
+publicclassClass1
+{
+
+publicstringfact(intn)
+{
+int d=1;
+for(inti=1;i<=n;i++)
+{
+d*=i;
+}
+returnd.ToString();
+}
+
+}
+}
+Source:
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default.aspx.cs"Inherits="_Default"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+<styletype="text/css">
+.auto-style1{
+text-align:center;
+}
+.auto-style2 {color:#0099CC;
+}
+</style>
+</head>
+<body>
+<formid="form1"runat="server">
+<divclass="auto-style1">
+<h3><spanclass="auto-style2">SatyamGuptaTYIT</span><brclass="auto-style2"/>
+</h3>
+<p>
+&nbsp;</p>
+</div>
+<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<asp:TextBoxID="TextBox2"runat="server"></asp:TextBox>
+</form>
+</body>
+</html>
+CS:
+usingSystem;
+usingSystem.Collections.Generic;
+ 
+using System.Linq;using System.Web;usingSystem.Web.UI;
+using System.Web.UI.WebControls;usingClassLibrary1;
+publicpartialclass_Default:System.Web.UI.Page
+{
+protectedvoidPage_Load(objectsender,EventArgse)
+{
+
+}
+
+protectedvoidButton1_Click(objectsender,EventArgse)
+{
+Class1c=new Class1();
+TextBox2.Text=c.fact(Convert.ToInt32(TextBox1.Text));
+}
+}
+ 
+
+23.	WriteanApplicationto:
+1.	GenerateFibonacciseries
+2.	Testforprimenumbers
+3.	Testforvowels
+4.	Reverseanumber
+Design:
+ 
+Code:
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default3.aspx.cs"Inherits="Default3"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+</head>
+<body>
+<formid="form1"runat="server">
+<div>
+<asp:ButtonID="Button1"runat="server"OnClick="Button1_Click"Text="fib"/>
+&nbsp;<asp:Button ID="Button3" runat="server" OnClick="Button3_Click" style="width: 48px" Text="prime" />&nbsp;<asp:Button ID="Button4" runat="server" OnClick="Button4_Click" style="width: 35px" Text="vow" />&nbsp;&nbsp;&nbsp;
+<asp:ButtonID="Button5"runat="server"OnClick="Button5_Click"Text="Reverse"/>
+&nbsp;
+<asp:TextBoxID="TextBox1"runat="server"></asp:TextBox>
+<asp:LabelID="Label1"runat="server"Text="Label"></asp:Label>
+</div>
+</form>
+</body>
+</html>
+Code:
+usingSystem;
+using System.Collections.Generic;using System.Linq;
+using System.Web;usingSystem.Web.UI;
+usingSystem.Web.UI.WebControls;
+
+publicpartialclassDefault3 :System.Web.UI.Page
+{
+protectedvoidPage_Load(objectsender,EventArgse)
+{
+
+}
+
+protectedvoidButton1_Click(objectsender,EventArgse)
+{
+ 
+Label1.Text=fib(Convert.ToInt32(TextBox1.Text));
+}
+
+publicstringfib(intlimit)
+{
+int x = 0;int y = 1;intz;
+string st=x+","+y+",";for(inti=0;i<10;i++)
+{
+z=x+y;x=y;
+y=z;
+if(z> limit)
+{
+break;
+}
+st+=z+",";
+}
+returnst;
+}
+publicstringprime(int num)
+{
+for(inti=2;i<num;i++)
+{
+if(num % i==0)
+{
+return"Yes";
+}
+
+}
+return"No";
+}
+publicstringvow(stringc)
+{
+if("aeiou".Contains(c))
+{
+return"vow";
+}
+else
+{
+return"Novowel";
+}
+}
+protectedvoidButton3_Click(objectsender,EventArgse)
+{
+Label1.Text=prime(Convert.ToInt32(TextBox1.Text));
+}
+
+protectedvoidButton4_Click(objectsender,EventArgse)
+{
+Label1.Text=vow(TextBox1.Text);
+}
+
+protectedvoidButton5_Click(objectsender,EventArgse)
+{
+Label1.Text="";
+for(inti= TextBox1.Text.Length -1;i>-1;i--)
+{
+Label1.Text+=TextBox1.Text[i];
+}
+}
+}
+
+
+
+23.	CreateasimplewebpagetodemonstrateuseofbuiltinDivideByZeroException and IndexOutOfRangeException exceptions usingtextboxand labelcontrol.
+Default.aspx:
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default2.aspx.cs"Inherits="Default2"%>
+
+<!DOCTYPEhtml>
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+</head>
+<body>
+<formid="form1"runat="server">
+<div>
+<asp:ButtonID="Button1"runat="server"OnClick="Button1_Click"Text="Button"/>
+</div>
+</form>
+</body>
+</html>
+
+
+Code:
+usingSystem;
+using System.Collections.Generic;using System.Linq;
+using System.Web;usingSystem.Web.UI;
+usingSystem.Web.UI.WebControls;
+
+publicpartialclassDefault2 :System.Web.UI.Page
+{
+protectedvoidPage_Load(objectsender,EventArgse)
+{
+
+}
+
+protectedvoidButton1_Click(objectsender,EventArgse)
+{
+try
+{
+string[] arr = new string[3];arr[0]="a";
+arr[1]="b";
+arr[2]="c";
+
+int a = 10;int b = 20;intc= a /b;
+}
+catch(IndexOutOfRangeExceptionior)
+{
+Response.Write(ior.ToString());
+}
+catch(DivideByZeroExceptiondbz)
+{
+Response.Write(dbz.ToString());
+}
+}
+}
+
+
+24.	Create a simple web page to show data in Tree view control and datalistusingweb.Sitemapfile containingnavigationinformation.
+Design:
+
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default3.aspx.cs"Inherits="Default3"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+</head>
+<body>
+<formid="form1"runat="server">
+<div>
+<asp:TreeViewID="TreeView1"runat="server"DataSourceID="SiteMapDataSource1">
+</asp:TreeView>
+<asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />@SatyamGupta
+</div>
+</form>
+</body>
+</html>
+
+Sitemap:
+
+<?xmlversion="1.0"encoding="utf-8"?>
+<siteMapxmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+<siteMapNodeurl="Numan.com"title=""description="Numan">
+<siteMapNodeurl="yahoomail.com"title="yahoomail"description="mail">
+<siteMapNodeurl="sportsnews1.com"title="sports1"description="sports"/>
+</siteMapNode>
+<siteMapNodeurl="yahoonews.com"title="yahoonews"description="news">
+<siteMapNodeurl="sportsnews.com"title="sports"description="sports"/>
+<siteMapNodeurl="gloabalnews.com"title="global"description="gloabal"/>
+</siteMapNode>
+</siteMapNode>
+
+</siteMap>
+ 
+25.	Displaytheno.ofvisitorsonagivenwebpage.
+Default.aspx:
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default4.aspx.cs"Inherits="Default4"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+</head>
+<body>
+<formid="form1"runat="server">
+<div>
+</div>
+</form>
+</body>
+</html>
+
+
+Code:
+usingSystem;
+using System.Collections.Generic;using System.Linq;
+using System.Web;usingSystem.Web.UI;
+usingSystem.Web.UI.WebControls;
+
+publicpartialclassDefault4 :System.Web.UI.Page
+{
+protectedvoidPage_Load(objectsender,EventArgse)
+{
+Response.Write(Application["usercount"].ToString());
+}
+}
+Global.asax:
+<%@Application Language="C#"%>
+
+<scriptrunat="server">
+
+voidApplication_Start(objectsender,EventArgse)
+{
+//Codethatrunson applicationstartup
+
+}
+
+voidApplication_End(objectsender,EventArgse)
+{
+//Codethatrunson applicationshutdown
+
+}
+
+voidApplication_Error(objectsender,EventArgse)
+{
+//Codethatrunswhenanunhandlederroroccurs
+
+}
+
+voidSession_Start(objectsender,EventArgse)
+{
+Application.Lock();
+Application["usercount"]=Convert.ToInt32(Application["usercount"])+1;
+ 
+Application.UnLock();
+
+}
+
+voidSession_End(objectsender,EventArgse)
+{
+
+}
+
+</scrip> 
+
+27. Create a registration form having text fields for accepting, Name, Age,Email, Address and Mobile number. Perform the following validations forthesame:
+1.	Allfieldsneedtobefilledcompulsorily
+2.	Nameshouldcontainonlyalphabetsandshouldnotbemorethan25characterslong
+3.	Validateemailandmobilenumberappropriately
+4.	Ageshouldbebetween18and32only.
+Include submit and cancel buttons. On click of submit button, open a new pageanddisplayalltheinformationenteredbytheuserandonclickofcancelbutton,all textfieldsshouldbecleared.
+Design:
+
+Default.aspx:
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default.aspx.cs"Inherits="_Default"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+<styletype="text/css">
+.auto-style1{
+text-align: center;color: #006600;font-size:large;
+}
+.auto-style2 {width:85px;
+}
+</style>
+</head>
+<body>
+<formid="form1"runat="server">
+<div>
+<tablestyle="width:100%;">
+<tr>
+<tdclass="auto-style1"colspan="3"><strong>Registration</strong></td>
+</tr>
+<tr>
+<tdclass="auto-style2">NAME:</td>
+<td>
+<asp:TextBoxID="TextBox1"runat="server"></asp:TextBox>
+<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"ControlToValidate="TextBox1" Display="Dynamic" ErrorMessage="*"ForeColor="Red"></asp:RequiredFieldValidator>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"ControlToValidate="TextBox1" Display="Dynamic" ErrorMessage="Only Aphabets and not more than 25Characters"ForeColor="Red"ValidationExpression="[a-zA-Z]{5,25}"></asp:RegularExpressionValidator>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<tdclass="auto-style2">AGE:</td>
+<td>
+<asp:TextBoxID="TextBox2"runat="server"></asp:TextBox>
+<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"ControlToValidate="TextBox2" Display="Dynamic" ErrorMessage="*"ForeColor="Red"></asp:RequiredFieldValidator>
+<asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="TextBox2"Display="Dynamic" ErrorMessage="18 to 32 Only" ForeColor="Red" MaximumValue="32" MinimumValue="18"Type="Integer"></asp:RangeValidator>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<tdclass="auto-style2">EMAIL:</td>
+<td>
+<asp:TextBoxID="TextBox3"runat="server"></asp:TextBox>
+<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"ControlToValidate="TextBox3" Display="Dynamic" ErrorMessage="*"ForeColor="Red"></asp:RequiredFieldValidator>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server"ControlToValidate="TextBox3" Display="Dynamic" ErrorMessage="Invalid Email" ForeColor="Red"ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<tdclass="auto-style2">ADDRESS:</td>
+<td>
+<asp:TextBoxID="TextBox4"runat="server"></asp:TextBox>
+<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server"ControlToValidate="TextBox4" Display="Dynamic" ErrorMessage="*"ForeColor="Red"></asp:RequiredFieldValidator>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<tdclass="auto-style2">PHONE:</td>
+<td>
+<asp:TextBoxID="TextBox5"runat="server"></asp:TextBox>
+<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server"ControlToValidate="TextBox5" Display="Dynamic" ErrorMessage="*"ForeColor="Red"></asp:RequiredFieldValidator>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server"ControlToValidate="TextBox5" Display="Dynamic" ErrorMessage="Invalid Phone" ForeColor="Red"ValidationExpression="\d{10}"></asp:RegularExpressionValidator>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<tdclass="auto-style2">&nbsp;</td>
+<td>
+<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="SUBMIT" />&nbsp;&nbsp;&nbsp;
+<asp:ButtonID="Button2"runat="server"OnClick="Button2_Click"Text="CLEAR"/>
+</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+</div>
+</form>
+</body>
+</html>
+
+Default.aspx.cs:
+usingSystem;
+using System.Collections.Generic;using System.Linq;
+using System.Web;usingSystem.Web.UI;
+usingSystem.Web.UI.WebControls;
+
+publicpartialclass_Default:System.Web.UI.Page
+{
+protectedvoidPage_Load(objectsender,EventArgse)
+{
+
+}
+
+protectedvoidButton1_Click(objectsender,EventArgse)
+{
+
+Response.Redirect("Default2.aspx?na="+TextBox1.Text+"&ag="+TextBox2.Text+"&em="+TextBox3.Text+"&ad="
++TextBox4.Text
++"&Ph="+TextBox5.Text+"");
+}
+
+protectedvoidButton2_Click(objectsender,EventArgse)
+{
+TextBox1.Text = "";TextBox2.Text = "";TextBox3.Text = "";TextBox4.Text = "";TextBox5.Text="";
+}
+}
+
+Default2.aspx:
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default2.aspx.cs"Inherits="Default2"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+</head>
+<body>
+<formid="form1"runat="server">
+<div>
+</div>
+</form>
+</body>
+</html>
+
+Default2.aspx.cs
+usingSystem;
+using System.Collections.Generic;using System.Linq;
+using System.Web;usingSystem.Web.UI;
+usingSystem.Web.UI.WebControls;
+
+publicpartialclassDefault2 :System.Web.UI.Page
+{
+protectedvoidPage_Load(objectsender,EventArgse)
+{
+Response.Write(Request.QueryString["na"]+"<br>");Response.Write(Request.QueryString["ag"]+"<br>");Response.Write(Request.QueryString["em"]+"<br>");Response.Write(Request.QueryString["ad"]+"<br>");Response.Write(Request.QueryString["Ph"]+"<br>");
+}
+}
+	
+
+ 
+30.	Createawebpagewithmultilinetextboxandtwobuttons,viz.saveContents and loadContents. On click of saveContents button, contentsfromthetextboxshouldberetainedandonclickofloadContentsbutton,thepreviouslysavedcontentsshouldbe displayedbackonthe textbox.
+Design:
+
+Codes:
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default6.aspx.cs"Inherits="Default6"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+<styletype="text/css">
+.auto-style1{
+text-align:center;
+}
+</style>
+</head>
+<body>
+<formid="form1"runat="server">
+<divclass="auto-style1">
+<h1>
+<asp:TextBox ID="TextBox2" runat="server" CssClass="auto-style1" Height="129px"TextMode="MultiLine"Width="239px"></asp:TextBox>
+<asp:ButtonID="Button1"runat="server"OnClick="Button1_Click"Text="SaveContent"/>
+ 
+&nbsp;
+ 
+
+<asp:ButtonID="Button2"runat="server"OnClick="Button2_Click"Text="LoadContent"/>
+<br/>
+SatyamGupta</h1>
+ 
+</div>
+
+</form>
+</body>
+</html>
+CScode:
+usingSystem;
+using System.Collections.Generic;using System.Linq;
+using System.Web;usingSystem.Web.UI;
+usingSystem.Web.UI.WebControls;
+
+publicpartialclassDefault6 :System.Web.UI.Page
+{
+stringdata= "";
+protectedvoidPage_Load(objectsender,EventArgse)
+{
+}
+protectedvoidButton1_Click(objectsender,EventArgse)
+{
+ViewState["data"]=TextBox2.Text;TextBox2.Text="";
+}
+protectedvoidButton2_Click(objectsender,EventArgse)
+{
+TextBox2.Text=ViewState["data"].ToString();
+}
+
+}
+
+ 
+31.	Store 3 objects of the furniture class having 3 data members (name,manufacturer, and cost) in 3 session objects. Display a panel to include alistbox displaying the names of all three furniture objects, and a buttonnamed “MoreInformation”. On click of the button retrieve the selectedobject(fromlistbox) informationand display itina label.
+
+Codes:
+<%@PageLanguage="C#"AutoEventWireup="true"CodeFile="Default7.aspx.cs"Inherits="Default7"%>
+
+<!DOCTYPEhtml>
+
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<headrunat="server">
+<title></title>
+<style type="text/css">#form1 {
+text-align:center;
+}
+.auto-style1{color:#66FFCC;
+}
+</style>
+</head>
+<body>
+<formid="form1"runat="server">
+<div>
+</div>
+<asp:ListBoxID="ListBox1"runat="server"></asp:ListBox>
+<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />&nbsp;<asp:LabelID="Label1"runat="server"Text="Label"></asp:Label>
+
+<br/>
+<br/>
+<br/>
+<spanclass="auto-style1">CodeBySatyam</span></form>
+</body>
+</html>
+CsCode:
+usingSystem;
+using System.Collections.Generic;using System.Linq;
+using System.Web;usingSystem.Web.UI;
+usingSystem.Web.UI.WebControls;
+publicpartialclassDefault7 :System.Web.UI.Page
+{
+protectedvoidPage_Load(objectsender,EventArgse)
+{
+if(!IsPostBack)
+{
+Session["s1"] = new Furniture("chair1", "xyz1", "1001");Session["s2"] = new Furniture("chair2", "xyz2", "1002");Session["s3"]=newFurniture("chair3","xyz3", "1003");
+
+ListBox1.Items.Add(((Furniture)Session["s1"]).name);ListBox1.Items.Add(((Furniture)Session["s2"]).name);ListBox1.Items.Add(((Furniture)Session["s3"]).name);
+}
+}
+
+protectedvoidButton1_Click(objectsender,EventArgse)
+{
+if(ListBox1.SelectedIndex!= -1)
+{
+if(ListBox1.SelectedIndex== 0)
+{
+Label1.Text=((Furniture)Session["s1"]).money;Label1.Text=((Furniture)Session["s1"]).cost;
+
+}
+elseif(ListBox1.SelectedIndex==1)
+{
+Label1.Text=((Furniture)Session["s2"]).money;Label1.Text=((Furniture)Session["s2"]).cost;
+
+}
+elseif(ListBox1.SelectedIndex==2)
+{
+Label1.Text=((Furniture)Session["s3"]).money;Label1.Text=((Furniture)Session["s3"]).cost;
+
+}
+}
+}
+}
+
+class Furniture
+{
+
+public string name;public string money;publicstringcost;
+
+publicFurniture(stringname,stringmoney,stringcost)
+{
+this.name = name;this.money = money;this.cost=cost;
+} 
+32.	WriteaprograminC#todemonstratemultipleinheritanceusinginterfaces.
+Code:
+usingSystem;
+publicclassProgram
+{
+publicinterfacecommon
+{
+voidDisplayed();
+}
+publicclass A :common
+{
+publicvoidDisplayed()
+{
+Console.WriteLine("ThisisthemethodofClassA");
+}
+}
+publicclass B:common
+{
+publicvoidDisplayed()
+{
+Console.WriteLine("ThisisthemethodofClassB");
+}
+}
+publicstaticvoidMain()
+{
+Console.WriteLine("Code by Satyam 09"); Console.WriteLine("Multiple Interface Using Interface"); common c;c=newA();c.Displayed();c=newB();c.Displayed();Console.ReadLine();
+}
+}
+
+
+
