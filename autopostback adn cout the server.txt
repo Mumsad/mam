@@ -1,0 +1,190 @@
+pratical 
+Autopostback with several contarol listbox dropdownbox(User Control)
+
+design code:-
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="YourNamespace.WebForm1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Server Controls Demo</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <!-- ListBox -->
+            <asp:ListBox ID="ListBox1" runat="server" SelectionMode="Multiple">
+                <asp:ListItem>Item 1</asp:ListItem>
+                <asp:ListItem>Item 2</asp:ListItem>
+                <asp:ListItem>Item 3</asp:ListItem>
+            </asp:ListBox>
+            <br />
+
+            <!-- Button to Display Selected Items -->
+            <asp:Button ID="btnDisplay" runat="server" Text="Display Selected Items" OnClick="btnDisplay_Click" />
+            <br />
+
+            <!-- TextBox to Display Selected Items -->
+            <asp:TextBox ID="txtSelectedItems" runat="server" ReadOnly="true"></asp:TextBox>
+            <br />
+
+            <!-- DropDownList1 -->
+            <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                <asp:ListItem Text="Option 1" Value="1"></asp:ListItem>
+                <asp:ListItem Text="Option 2" Value="2"></asp:ListItem>
+                <asp:ListItem Text="Option 3" Value="3"></asp:ListItem>
+            </asp:DropDownList>
+            <br />
+
+            <!-- Label to Display Selected Item from DropDownList1 -->
+            <asp:Label ID="lblSelectedOption" runat="server"></asp:Label>
+            <br />
+
+            <!-- DropDownList2 for Font Size -->
+            <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
+                <asp:ListItem Text="Small" Value="10"></asp:ListItem>
+                <asp:ListItem Text="Medium" Value="14"></asp:ListItem>
+                <asp:ListItem Text="Large" Value="18"></asp:ListItem>
+            </asp:DropDownList>
+            <br />
+
+            <!-- Label to Change Font Size -->
+            <asp:Label ID="lblChangeFontSize" runat="server"></asp:Label>
+            <br />
+
+            <!-- Image Control -->
+            <asp:Image ID="imgPhoto" runat="server" ImageUrl="C:\Users\shaik\Downloads\photo.JPEG"  Width="500px" Height="500px"/>
+            <br />
+
+            <!-- CheckBoxes for Formatting -->
+            <asp:CheckBox ID="chkUnderline" runat="server" Text="Underline" AutoPostBack="true" OnCheckedChanged="chk_CheckedChanged" />
+            <asp:CheckBox ID="chkBold" runat="server" Text="Bold" AutoPostBack="true" OnCheckedChanged="chk_CheckedChanged" />
+            <asp:CheckBox ID="chkItalic" runat="server" Text="Italic" AutoPostBack="true" OnCheckedChanged="chk_CheckedChanged" />
+            <br />
+
+            <!-- RadioButtons for Label Color -->
+            <asp:RadioButton ID="rbRed" runat="server" Text="Red" GroupName="colorGroup" AutoPostBack="true" OnCheckedChanged="rb_CheckedChanged" />
+            <asp:RadioButton ID="rbBlue" runat="server" Text="Blue" GroupName="colorGroup" AutoPostBack="true" OnCheckedChanged="rb_CheckedChanged" />
+            <asp:RadioButton ID="rbGreen" runat="server" Text="Green" GroupName="colorGroup" AutoPostBack="true" OnCheckedChanged="rb_CheckedChanged" />
+        </div>
+    </form>
+</body>
+</html>
+
+cs Code:-
+
+using System;
+using System.Linq;
+using System.Web.UI.WebControls;
+
+namespace YourNamespace
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void btnDisplay_Click(object sender, EventArgs e)
+        {
+            // Display selected items from the ListBox in TextBox
+            txtSelectedItems.Text = string.Join(", ", ListBox1.Items.Cast<ListItem>().Where(li => li.Selected).Select(li => li.Text));
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Display selected item from DropDownList1 in Label
+            lblSelectedOption.Text = "Selected Option: " + DropDownList1.SelectedItem.Text;
+        }
+
+        protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Change font size of the label according to the selected item in DropDownList2
+            int fontSize = Convert.ToInt32(DropDownList2.SelectedItem.Value);
+            lblChangeFontSize.Style["font-size"] = fontSize + "px";
+            lblChangeFontSize.Text = $"Font Size: {fontSize}px";
+        }
+
+        protected void chk_CheckedChanged(object sender, EventArgs e)
+        {
+            // Apply formatting to the label based on CheckBox states
+            lblChangeFontSize.Style["text-decoration"] = chkUnderline.Checked ? "underline" : "none";
+            lblChangeFontSize.Style["font-weight"] = chkBold.Checked ? "bold" : "normal";
+            lblChangeFontSize.Style["font-style"] = chkItalic.Checked ? "italic" : "normal";
+        }
+
+        protected void rb_CheckedChanged(object sender, EventArgs e)
+        {
+            // Apply color to the label based on the selected RadioButton
+            if (rbRed.Checked)
+            {
+                lblChangeFontSize.Style["color"] = "red";
+            }
+            else if (rbBlue.Checked)
+            {
+                lblChangeFontSize.Style["color"] = "blue";
+            }
+            else if (rbGreen.Checked)
+            {
+                lblChangeFontSize.Style["color"] = "green";
+            }
+        }
+    }
+}
+
+prtical 
+count the number of time visite to server
+
+design 
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebApplication1.Default" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Submit Counter</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h1>Submit Counter</h1>
+            <asp:Label ID="lblSubmitCount" runat="server" Text="Number of Submissions: 0"></asp:Label>
+            <br />
+            <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
+        </div>
+    </form>
+</body>
+</html>
+
+cs Code:-
+
+using System;
+
+namespace WebApplication1
+{
+    public partial class Default : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                // Initialize submission count on the first load
+                ViewState["SubmitCount"] = 0;
+                UpdateSubmitCountLabel();
+            }
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            // Increment the submission count
+            int submitCount = (int)ViewState["SubmitCount"] + 1;
+            ViewState["SubmitCount"] = submitCount;
+
+            // Update the label to display the new submission count
+            UpdateSubmitCountLabel();
+        }
+
+        private void UpdateSubmitCountLabel()
+        {
+            lblSubmitCount.Text = $"Number of Submissions: {ViewState["SubmitCount"]}";
+        }
+    }
+}
+

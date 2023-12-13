@@ -1,0 +1,116 @@
+Certainly! Below is an example of an ASP.NET Web Forms page that includes two groups of RadioButtons, a DropDownList, labels, and a TextBox to perform the specified operations:
+
+aspx
+Copy code
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="YourNamespace.WebForm1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Font and Country Code</title>
+    <style>
+        .group1 {
+            margin-bottom: 20px;
+        }
+
+        .group2 {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function changeFont() {
+            var label = document.getElementById('<%= lblOutput.ClientID %>');
+            var fontSize = document.querySelector('input[name="fontGroup"]:checked').value;
+            var fontFace = document.querySelector('input[name="faceGroup"]:checked').value;
+            label.style.fontSize = fontSize + "px";
+            label.style.fontFamily = fontFace;
+        }
+
+        function showCountryCode() {
+            var countryList = document.getElementById('<%= ddlCountries.ClientID %>');
+            var selectedCountry = countryList.options[countryList.selectedIndex].value;
+            document.getElementById('<%= txtCountryCode.ClientID %>').value = selectedCountry;
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="group1">
+            <h2>Font Settings</h2>
+            <label>Select Font Size:</label>
+            <asp:RadioButtonList ID="rblFontSize" runat="server" CssClass="radioGroup" RepeatDirection="Horizontal" AutoPostBack="true" OnSelectedIndexChanged="rblFontSize_SelectedIndexChanged">
+                <asp:ListItem Text="12" Value="12" />
+                <asp:ListItem Text="16" Value="16" />
+                <asp:ListItem Text="20" Value="20" />
+            </asp:RadioButtonList>
+
+            <br />
+
+            <label>Select Font Face:</label>
+            <asp:RadioButtonList ID="rblFontFace" runat="server" CssClass="radioGroup" RepeatDirection="Horizontal" AutoPostBack="true" OnSelectedIndexChanged="rblFontFace_SelectedIndexChanged">
+                <asp:ListItem Text="Arial" Value="Arial" />
+                <asp:ListItem Text="Times New Roman" Value="Times New Roman" />
+                <asp:ListItem Text="Verdana" Value="Verdana" />
+            </asp:RadioButtonList>
+
+            <br />
+
+            <asp:Label ID="lblOutput" runat="server" Text="Sample Text" Font-Size="16px" Font-Family="Arial"></asp:Label>
+        </div>
+
+        <div class="group2">
+            <h2>Country Code</h2>
+            <label>Select Country:</label>
+            <asp:DropDownList ID="ddlCountries" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlCountries_SelectedIndexChanged">
+                <asp:ListItem Text="Select" Value="" />
+                <asp:ListItem Text="USA" Value="1" />
+                <asp:ListItem Text="Canada" Value="2" />
+                <asp:ListItem Text="UK" Value="3" />
+            </asp:DropDownList>
+
+            <br />
+
+            <label>Country Code:</label>
+            <asp:TextBox ID="txtCountryCode" runat="server" ReadOnly="true"></asp:TextBox>
+        </div>
+    </form>
+</body>
+</html>
+In the code-behind file (WebForm1.aspx.cs), you can add the following event handlers:
+
+csharp
+Copy code
+using System;
+
+namespace YourNamespace
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                // Set default values for font settings
+                lblOutput.Style["font-size"] = "16px";
+                lblOutput.Style["font-family"] = "Arial";
+            }
+        }
+
+        protected void rblFontSize_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            changeFont();
+        }
+
+        protected void rblFontFace_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            changeFont();
+        }
+
+        protected void ddlCountries_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            showCountryCode();
+        }
+    }
+}
+These event handlers will be triggered when the user selects different options from the RadioButtons and the DropDownList, updating the font settings and displaying the country code accordingly.
